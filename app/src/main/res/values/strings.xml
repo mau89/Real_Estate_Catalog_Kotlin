@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">RealEstateCatalogKotlin</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Вход</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="exit">Выход</string>
+    <string name="add_property">Добавить объект</string>
+    <string name="edit_property">Редактировать</string>
+    <string name="address">Адрес</string>
+    <string name="area">Площадь</string>
+    <string name="price">Цена</string>
+    <string name="quantity_room">Количество комнат</string>
+    <string name="floor">Этаж</string>
+    <string name="save">Записать</string>
+    <string name="Error">Ошибка</string>
+    <string name="error_login_password" translatable="false">Ошибка авторизации. \nНеверный логин/пароль</string>
+    <string name="error_login">Ошибка логина</string>
+    <string name="error_password">Пароль должен содержать минимум 6 символов</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="text_remember_me">Remember Me</string>
+    <string name="text_forget_password">Forget Password</string>
+    <string name="botton_log_in">Log In</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="error_email">Данный e-mail уже используется</string>
+    <string name="deleteEstate">Удалить</string>
+    <string name="saveOk">Успешно сохранен</string>
+    <string name="isEmptyAddress">Не заполнен адрес</string>
+    <string name="isEmptyArea">Не указана площадь</string>
+    <string name="isEmptyPrice">Не указана цена</string>
+    <string name="isEmptyQuantityRoom">Не указано количество комнат</string>
+    <string name="isEmptyFloor">Не указан этаж</string>
+    <string name="PermissionsRequired">Необходимо предоставить разрешения для корректной работы приложения</string>
+    <string name="openSettings">Открыть настройки приложения для предоставления разрешений?</string>
+    <string name="selectPicture">Выбор изображения</string>
+    <string name="gallery">Галерея</string>
+    <string name="camera">Камера</string>
+    <string name="error_select_image">Не выбрано изображение</string>
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1022244448491",
+    "firebase_url": "https://realestatecatalog.firebaseio.com",
+    "project_id": "realestatecatalog",
+    "storage_bucket": "realestatecatalog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022244448491:android:f7b814267b583653ffb6ae",
+        "android_client_info": {
+          "package_name": "com.example.realestatecatalogkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022244448491-6p224ds45cfhoddg8so7nviinscet9g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUkAhrWCEFm49lhFSPQmf0h00M8fq48Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022244448491-6p224ds45cfhoddg8so7nviinscet9g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

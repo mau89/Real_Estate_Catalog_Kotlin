@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_add_property"
+        android:orderInCategory="100"
+        android:title="@string/add_property"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_edit_property"
+        android:orderInCategory="100"
+        android:title="@string/edit_property"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="100"
+        android:title="@string/exit"
+        app:showAsAction="never" />
+</menu>
