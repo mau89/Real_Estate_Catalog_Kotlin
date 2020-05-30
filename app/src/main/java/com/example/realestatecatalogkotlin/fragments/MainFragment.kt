@@ -83,15 +83,15 @@ class MainFragment : BaseFragment(), MainViewFragment {
             R.id.action_exit -> {
                 activity?.let { it ->
                     AlertDialog.Builder(it).apply {
-                        setTitle("Are you sure?")
-                        setPositiveButton("Yes") { _, _ ->
+                        setTitle("Закрыть приложение?")
+                        setPositiveButton("Да") { _, _ ->
                             Helpers.signOut()
                             view?.let {
                                 Navigation.findNavController(it)
                                     .navigate(R.id.action_mainFragment_to_loginFragment)
                             }
                         }
-                        setNegativeButton("Cancel") { _, _ ->
+                        setNegativeButton("Отмена") { _, _ ->
                         }
                     }.create().show()
                 }

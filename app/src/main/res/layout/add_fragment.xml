@@ -32,9 +32,10 @@
                 android:id="@+id/txt_add_property"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark"
                 android:textSize="18sp"
-                android:visibility="gone"
-                android:textColor="@android:color/holo_red_dark" />
+                android:visibility="gone" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_add_address_property_layout"
                 android:layout_width="match_parent"

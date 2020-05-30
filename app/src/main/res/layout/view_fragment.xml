@@ -19,6 +19,7 @@
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/image_view_property">
@@ -27,13 +28,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Цена" />
+            android:text="@string/str_price"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_price_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -42,6 +45,7 @@
         android:id="@+id/linear2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/linear1">
@@ -50,13 +54,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Площадь" />
+            android:text="@string/str_area"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_area_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -65,6 +71,7 @@
         android:id="@+id/linear3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/linear2">
@@ -73,19 +80,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Адрес" />
+            android:text="@string/str_address"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_address_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/linear3">
@@ -94,19 +104,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Количество комнат" />
+            android:text="@string/str_quantity_room"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_quantity_room_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/linear4">
@@ -115,19 +128,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Цена за кв. м." />
+            android:text="@string/str_price_sqm"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_price_sqm_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="12dp"
         android:layout_weight="10"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/linear5">
@@ -136,12 +152,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Этаж" />
+            android:text="@string/str_floor"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/text_view_floor_property"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

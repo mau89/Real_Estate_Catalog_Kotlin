@@ -42,4 +42,10 @@
     <string name="gallery">Галерея</string>
     <string name="camera">Камера</string>
     <string name="error_select_image">Не выбрано изображение</string>
+    <string name="str_quantity_room">Количество комнат:</string>
+    <string name="str_price">Цена:</string>
+    <string name="str_area">Площадь:</string>
+    <string name="str_address">Адрес:</string>
+    <string name="str_price_sqm">Цена за кв. м.:</string>
+    <string name="str_floor">Этаж:</string>
 </resources>

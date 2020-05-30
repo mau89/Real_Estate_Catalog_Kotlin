@@ -3,7 +3,6 @@ package com.example.realestatecatalogkotlin.activities
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AlertDialog
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -78,10 +77,6 @@ class MainActivity : MvpAppCompatActivity(), MainViewActivity {
                 }
                 setNeutralButton("Выход из аккаунта") { _, _ ->
                     Helpers.signOut()
-                    findNavController(
-                        this@MainActivity,
-                        R.id.navFragment
-                    ).navigate(R.id.action_mainFragment_to_loginFragment)
                 }
                 setNegativeButton("Нет") { _, _ ->
                 }

@@ -12,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -57,12 +56,6 @@ class AddFragment : BaseFragment(), AddViewFragment {
         image_add_property.setOnClickListener {
 
             if (checkAndRequestPermissions()) {
-                Toast.makeText(
-                    activity?.applicationContext,
-                    "Права Предоставлены",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
                 showPictureDialog()
             }
         }
