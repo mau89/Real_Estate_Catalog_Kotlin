@@ -1,7 +1,6 @@
 package com.example.realestatecatalogkotlin.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.navigation.Navigation
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -36,7 +35,6 @@ class ViewFragment : BaseFragment(), ViewsFragment {
         Helpers.stopTimer()
         Helpers.startTimer()
         val key = requireArguments().getLong("bundleId")
-        Log.d("Log", "$key onViewCreated")
         viewPresenter.addBundle(key)
         if (key != -1L) {
             launch {
@@ -61,12 +59,10 @@ class ViewFragment : BaseFragment(), ViewsFragment {
     }
 
     override fun openEstate(bundle: Long) {
-        Log.d("Log", "$bundle openEstate")
         bundleId = bundle
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.d("Log", "$bundleId onOptionsItemSelected")
         when (item.itemId) {
             R.id.action_edit_property -> {
                 val bundle = Bundle()

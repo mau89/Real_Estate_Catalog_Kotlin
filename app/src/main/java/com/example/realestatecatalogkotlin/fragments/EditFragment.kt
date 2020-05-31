@@ -1,12 +1,10 @@
 package com.example.realestatecatalogkotlin.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.Navigation
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.realestatecatalogkotlin.Helperss.Helpers
@@ -40,8 +38,6 @@ class EditFragment : BaseFragment(), EditViewFragment {
         Helpers.stopTimer()
         Helpers.startTimer()
         val key = requireArguments().getLong("bundleId")
-        Log.d("Log", "$key EditFragment")
-        Toast.makeText(activity?.applicationContext, key.toString(), Toast.LENGTH_LONG).show()
         if (key != -1L) {
             launch {
                 editEstateDb = estateDb.getEstate(key)
