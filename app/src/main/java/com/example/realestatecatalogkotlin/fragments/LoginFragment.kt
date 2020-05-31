@@ -71,9 +71,4 @@ class LoginFragment : BaseFragment(), LoginViewFragment {
         menu.findItem(R.id.action_exit).isVisible = false
         super.onPrepareOptionsMenu(menu)
     }
-
-    override fun onStart() {
-        super.onStart()
-        loginPresenter.currentUsers()
-    }
 }
