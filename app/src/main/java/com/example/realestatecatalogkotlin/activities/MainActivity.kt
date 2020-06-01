@@ -83,6 +83,8 @@ class MainActivity : MvpAppCompatActivity(), MainViewActivity {
                 setNegativeButton("Нет") { _, _ ->
                 }
             }.create().show()
+        } else {
+            super.onBackPressed()
         }
     }
 }
