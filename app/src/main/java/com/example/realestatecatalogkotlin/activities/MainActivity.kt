@@ -73,15 +73,16 @@ class MainActivity : MvpAppCompatActivity(), MainViewActivity {
             AlertDialog.Builder(this).apply {
                 setTitle("Закрыть приложение?")
                 setPositiveButton("Да") { _, _ ->
+                    super.onBackPressed()
                     Helpers.closeApp()
                 }
                 setNeutralButton("Выход из аккаунта") { _, _ ->
+                    super.onBackPressed()
                     Helpers.signOut()
                 }
                 setNegativeButton("Нет") { _, _ ->
                 }
             }.create().show()
         }
-        super.onBackPressed()
     }
 }
