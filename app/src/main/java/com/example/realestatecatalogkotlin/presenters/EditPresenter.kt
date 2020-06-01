@@ -9,6 +9,7 @@ import com.example.realestatecatalogkotlin.views.EditViewFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.math.BigDecimal
 
 @InjectViewState
 class EditPresenter : MvpPresenter<EditViewFragment>() {
@@ -29,7 +30,10 @@ class EditPresenter : MvpPresenter<EditViewFragment>() {
         floor: String
     ) {
         if (checkInput(photo, address, area, price, quantity_room, floor)) {
-            val priceSqm = price.toDouble() / area.toDouble()
+            val priceSqm = BigDecimal(price.toDouble() / area.toDouble()).setScale(
+                2,
+                BigDecimal.ROUND_CEILING
+            ).toDouble()
             val estateDb = App.estateDb
             val mEstateDb = EstateDb(
                 photo,
