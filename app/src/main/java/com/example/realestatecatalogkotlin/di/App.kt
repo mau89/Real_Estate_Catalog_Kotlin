@@ -4,8 +4,8 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.view.View
-import com.example.realestatecatalogkotlin.database.EstateDatabase
-import com.example.realestatecatalogkotlin.database.EstateDbDao
+import com.example.moduledb.database.EstateDatabase
+import com.example.moduledb.database.EstateDbDao
 
 class App : Application() {
     companion object {
@@ -18,7 +18,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        estateDatabase = EstateDatabase.getInstance(applicationContext)
+        estateDatabase =
+            EstateDatabase.getInstance(applicationContext)
         estateDb = estateDatabase.estateDbDao
     }
 }

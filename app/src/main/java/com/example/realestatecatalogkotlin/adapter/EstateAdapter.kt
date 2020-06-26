@@ -3,8 +3,8 @@ package com.example.realestatecatalogkotlin.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moduledb.database.EstateDb
 import com.example.realestatecatalogkotlin.R
-import com.example.realestatecatalogkotlin.database.EstateDb
 
 class EstateAdapter :
     RecyclerView.Adapter<EstateViewHolder>() {

@@ -1,11 +1,15 @@
 package com.example.realestatecatalogkotlin.presenters
 
 import android.os.Bundle
+import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.example.realestatecatalogkotlin.database.EstateDb
+import com.example.moduledb.database.EstateDb
 import com.example.realestatecatalogkotlin.di.App
 import com.example.realestatecatalogkotlin.views.EditViewFragment
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -19,6 +23,7 @@ class EditPresenter : MvpPresenter<EditViewFragment>() {
     var errorPrice = false
     var errorQuantityRoom = false
     var errorFloor = false
+    private val estateDb = App.estateDb
 
     fun saveEstate(
         idEstate: Long,
@@ -78,5 +83,31 @@ class EditPresenter : MvpPresenter<EditViewFragment>() {
         errorQuantityRoom = quantity_room.isEmpty()
         errorFloor = floor.isEmpty()
         return !(errorPhoto || errorAddress || errorArea || errorPrice || errorQuantityRoom || errorFloor)
+    }
+
+    fun getEstate(key: Long) {
+        Log.d("TAG", "зашел в процедуру")
+        if (key != -1L) {
+            val observable = getItemEstate(key)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    returnValue(it)
+                }, {})
+            Log.d("TAG", "в вышел из него")
+        } else {
+            returnValue(null)
+        }
+    }
+
+    private fun returnValue(it: EstateDb?) {
+        viewState.editItemEstate(it)
+    }
+
+    private fun getItemEstate(key: Long): Single<EstateDb> {
+        return Single.create { subscriber ->
+            val getEstateDb = estateDb.getEstate(key)
+            subscriber.onSuccess(getEstateDb)
+        }
     }
 }

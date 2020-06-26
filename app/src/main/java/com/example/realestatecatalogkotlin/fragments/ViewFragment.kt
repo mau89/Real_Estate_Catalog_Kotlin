@@ -4,19 +4,18 @@ import android.os.Bundle
 import android.view.*
 import androidx.navigation.Navigation
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.example.moduledb.database.EstateDb
 import com.example.realestatecatalogkotlin.Helperss.Helpers
 import com.example.realestatecatalogkotlin.R
-import com.example.realestatecatalogkotlin.di.App
 import com.example.realestatecatalogkotlin.presenters.ViewPresenter
 import com.example.realestatecatalogkotlin.views.ViewsFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.view_fragment.*
-import kotlinx.coroutines.launch
 import java.io.File
 
 class ViewFragment : BaseFragment(), ViewsFragment {
-    private val estateDb = App.estateDb
-    var bundleId = -1L
+
+    private var bundleId = -1L
 
     @InjectPresenter
     lateinit var viewPresenter: ViewPresenter
@@ -36,19 +35,7 @@ class ViewFragment : BaseFragment(), ViewsFragment {
         Helpers.startTimer()
         val key = requireArguments().getLong("bundleId")
         viewPresenter.addBundle(key)
-        if (key != -1L) {
-            launch {
-                val viewEstateDb = estateDb.getEstate(key)
-                Picasso.get().load(File(viewEstateDb.photo)).into(image_view_property)
-                text_view_price_property.text = viewEstateDb.price.toBigDecimal().toPlainString()
-                text_view_area_property.text = viewEstateDb.area.toBigDecimal().toPlainString()
-                text_view_address_property.text = viewEstateDb.address
-                text_view_quantity_room_property.text = viewEstateDb.quantity_room.toString()
-                text_view_price_sqm_property.text =
-                    viewEstateDb.price_sqm.toBigDecimal().toPlainString()
-                text_view_floor_property.text = viewEstateDb.floor.toString()
-            }
-        }
+        viewPresenter.getEstate(key)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
@@ -60,6 +47,21 @@ class ViewFragment : BaseFragment(), ViewsFragment {
 
     override fun openEstate(bundle: Long) {
         bundleId = bundle
+    }
+
+    override fun viewItemEstate(estateDb: EstateDb?) {
+        if (estateDb != null) {
+
+            Picasso.get().load(File(estateDb.photo)).into(image_view_property)
+            text_view_price_property.text = estateDb.price.toBigDecimal().toPlainString()
+            text_view_area_property.text = estateDb.area.toBigDecimal().toPlainString()
+            text_view_address_property.text = estateDb.address
+            text_view_quantity_room_property.text = estateDb.quantity_room.toString()
+            text_view_price_sqm_property.text =
+                estateDb.price_sqm.toBigDecimal().toPlainString()
+            text_view_floor_property.text = estateDb.floor.toString()
+
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -1,9 +1,10 @@
-package com.example.realestatecatalogkotlin.database
+package com.example.moduledb.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+
 
 @Dao
 interface EstateDbDao {
@@ -14,7 +15,7 @@ interface EstateDbDao {
     suspend fun updateEstate(estate: EstateDb)
 
     @Query("SELECT * from EstateDb WHERE estateId = :key")
-    suspend fun getEstate(key: Long): EstateDb
+     fun getEstate(key: Long): EstateDb
 
     @Query("DELETE FROM EstateDb WHERE estateId = :key")
     suspend fun deleteEstate(key: Long)

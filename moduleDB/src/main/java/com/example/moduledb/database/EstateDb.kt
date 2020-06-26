@@ -1,4 +1,4 @@
-package com.example.realestatecatalogkotlin.database
+package com.example.moduledb.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
