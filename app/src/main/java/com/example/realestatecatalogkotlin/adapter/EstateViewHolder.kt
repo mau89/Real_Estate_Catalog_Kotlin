@@ -6,7 +6,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.realestatecatalogkotlin.R
-import com.example.realestatecatalogkotlin.database.EstateDb
 
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -19,7 +18,7 @@ class EstateViewHolder(itemView: View, private val delegate: EstateAdapterCallba
     private var tvAreaItem: TextView = itemView.findViewById(R.id.tv_area_item)
     private var btnDeleteEstate: Button = itemView.findViewById(R.id.btn_delete_estate)
 
-    fun bind(item: EstateDb) {
+    fun bind(item: com.example.moduledb.database.EstateDb) {
         tvAddressItem.text = item.address
         Picasso.get().load(
             File(item.photo)

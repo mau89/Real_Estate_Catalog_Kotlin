@@ -3,8 +3,9 @@ package com.example.realestatecatalogkotlin.presenters
 import android.os.Bundle
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import com.example.moduledb.database.EstateDb
 import com.example.realestatecatalogkotlin.R
-import com.example.realestatecatalogkotlin.database.EstateDb
+
 import com.example.realestatecatalogkotlin.di.App
 import com.example.realestatecatalogkotlin.views.AddViewFragment
 import kotlinx.coroutines.Dispatchers
@@ -14,12 +15,12 @@ import java.math.BigDecimal
 
 @InjectViewState
 class AddPresenter : MvpPresenter<AddViewFragment>() {
-    var errorPhoto = false
-    var errorAddress = false
-    var errorArea = false
-    var errorPrice = false
-    var errorQuantityRoom = false
-    var errorFloor = false
+    private var errorPhoto = false
+    private var errorAddress = false
+    private var errorArea = false
+    private var errorPrice = false
+    private var errorQuantityRoom = false
+    private var errorFloor = false
     private val db = App.estateDatabase
 
     fun saveEstatePresenter(

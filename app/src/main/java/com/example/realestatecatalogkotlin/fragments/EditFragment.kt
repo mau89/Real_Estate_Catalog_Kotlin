@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.example.moduledb.database.EstateDb
 import com.example.realestatecatalogkotlin.Helperss.Helpers
 import com.example.realestatecatalogkotlin.R
-import com.example.realestatecatalogkotlin.database.EstateDb
-import com.example.realestatecatalogkotlin.di.App
 import com.example.realestatecatalogkotlin.presenters.EditPresenter
 import com.example.realestatecatalogkotlin.views.EditViewFragment
 import kotlinx.android.synthetic.main.edit_fragment.*
-import kotlinx.coroutines.launch
+import kotlin.properties.Delegates
 
 class EditFragment : BaseFragment(), EditViewFragment {
 
-    private val estateDb = App.estateDb
-    private lateinit var editEstateDb: EstateDb
+    private var estateId by Delegates.notNull<Long>()
+    private lateinit var photo: String
+    private lateinit var address: String
 
     @InjectPresenter
     lateinit var editPresenter: EditPresenter
@@ -38,20 +38,12 @@ class EditFragment : BaseFragment(), EditViewFragment {
         Helpers.stopTimer()
         Helpers.startTimer()
         val key = requireArguments().getLong("bundleId")
-        if (key != -1L) {
-            launch {
-                editEstateDb = estateDb.getEstate(key)
-                text_edit_area_property.setText(editEstateDb.area.toBigDecimal().toPlainString())
-                text_edit_price_property.setText(editEstateDb.price.toBigDecimal().toPlainString())
-                text_edit_quantity_room_property.setText(editEstateDb.quantity_room.toString())
-                text_edit_floor_property.setText(editEstateDb.floor.toString())
-            }
-        }
+        editPresenter.getEstate(key)
         btn_edit_property.setOnClickListener {
             editPresenter.saveEstate(
-                editEstateDb.estateId,
-                editEstateDb.photo,
-                editEstateDb.address,
+                estateId,
+                photo,
+                address,
                 text_edit_area_property.text.toString(),
                 text_edit_price_property.text.toString(),
                 text_edit_quantity_room_property.text.toString(),
@@ -103,6 +95,18 @@ class EditFragment : BaseFragment(), EditViewFragment {
             text_edit_floor_property_layout.error = "Не указан этаж"
         } else {
             text_edit_floor_property_layout.isErrorEnabled = false
+        }
+    }
+
+    override fun editItemEstate(estateDb: EstateDb?) {
+        if (estateDb != null) {
+            estateId = estateDb.estateId
+            photo = estateDb.photo
+            address = estateDb.address
+            text_edit_area_property.setText(estateDb.area.toBigDecimal().toPlainString())
+            text_edit_price_property.setText(estateDb.price.toBigDecimal().toPlainString())
+            text_edit_quantity_room_property.setText(estateDb.quantity_room.toString())
+            text_edit_floor_property.setText(estateDb.floor.toString())
         }
     }
 }
